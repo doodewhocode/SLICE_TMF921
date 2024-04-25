@@ -1,0 +1,71 @@
+{
+    "externalId": "external-ID_SentToNBI_BSS_ID",
+    "priority": "1",
+    "category": "ER_SERVICE - S1 DELETE - INFRASTRUCTURE - CONNECTIVITY + MOBILE_VOICE + USER-CONNECTION",
+    "orderType": "TERMINATE",
+    "source": "SIMF",
+    "relatedParty": [
+        {
+            "id": "SITE_1",
+            "source": "BSS",
+            "name": "SITE_1",
+            "role": "customer"
+        }
+    ],
+    "orderItems": [
+        {
+            "action": "Remove",
+            "service": {
+                "serviceSpecification": {
+                    "code": "USER-CONNECTION",
+                    "version": "1.0"
+                },
+                "publicIdentifier": "USER-CONNECTION_ER_SERVICE"
+            },
+            "id": 1
+        },
+        {
+            "action": "Remove",
+            "service": {
+                "serviceSpecification": {
+                    "code": "MOBILE_VOICE",
+                    "version": "1.0"
+                },
+                "publicIdentifier": "MOBILE_VOICE_ER_SERVICE"
+            },
+            "id": 2,
+            "orderItemRelationships": [
+                {
+                    "id": "1",
+                    "name": "USER-CONNECTION",
+                    "type": "DEPENDENCY"
+                }
+            ]
+        },
+        {
+            "action": "Remove",
+            "service": {
+                "serviceSpecification": {
+                    "code": "CONNECTIVITY",
+                    "version": "1.0"
+                },
+                "category": "CFS",
+                "publicIdentifier": "serviceIntentId_CONNECTIVITY_ER_SERVICE"
+            },
+            "id": "3",
+            "orderItemRelationships": [
+                {
+                    "id": "2",
+                    "name": "MOBILE_VOICE",
+                    "type": "DEPENDENCY"
+                }
+            ]
+        }
+    ],
+    "extraValues": [
+        {
+            "name": "idan3",
+            "value": "true"
+        }
+    ]
+}

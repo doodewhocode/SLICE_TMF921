@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+//        "runtimeVersion": "12.22.12",
+        "request": "launch",
+        "name": "Launch Program",
+        "skipFiles": ["<node_internals>/**"],
+        "program": "${workspaceFolder}\\index.js",
+        "env": {
+          "GRAPHQL_ENGINE_URL": "10.220.239.74",
+          "SEND_RESOURCE_INTENT": true,
+          "maxReports": 5
+       }
+      }
+    ]
+  }
